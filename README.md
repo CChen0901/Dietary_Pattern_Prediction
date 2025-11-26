@@ -27,7 +27,7 @@ git clone https://github.com/CChen0901/Dietary_Pattern_Prediction.git
 2. Set file path
 
 Ensure that the file structure is as shown above, especially the following points:
-* The Prediction Model. rds file is located in the model/folder.
+* The Prediction Model file is located in the model/folder.
 * The mock. csv data file is located in the data/folder.
 
 3. Run R script
@@ -35,11 +35,11 @@ Ensure that the file structure is as shown above, especially the following point
 Go to the rscript/folder, open the predict_demo.R script, and check if the path settings in the following code are correct.
 ```sh
 # Import the model for prediction
-model <- read RDS("../model/Prediction Model.rds")
+model <- readRDS("../model/Prediction Model")
 # Load sample data
 sample_data <- read_csv("../data/mock.csv")
 ```
-In this code, read RDS ("../model/Prediction Model. rds") and read_csv ("../data/mock. csv") use relative paths. This ensures that the path can be correctly resolved when the project runs on different machines.
+In this code, readRDS ("../model/Prediction Model) and read_csv ("../data/mock. csv") use relative paths. This ensures that the path can be correctly resolved when the project runs on different machines.
 
 4. Execute script
 
@@ -55,8 +55,7 @@ Using the model, samples will be predicted as one of the following dietary patte
 urban diet, and the Chinese-adapted Western diet. Based on the four key food choices, they were defined as follows: the Chinese-adapted Mediterranean diet is characterized by high consumption of whole grains and tubers and low intake of salty and smoked foods, whereas the Chinese-adapted Western diet is marked by high consumption of smoked and salty foods and low intake of whole grains and tubers. The conventional Chinese urban diet shows no strong preference for the four key dietary factors.
 
 6. Use your owner food choices
-Except mock data we provide, you can use your true response to 12 food groups to determine your dietary pattern. 
-
+Except mock data we provide, you can use your true response to 12 food groups to determine your dietary pattern. The food groups are as following: primary carbohydrate intake (defined as consumed at least twice daily, including refined grains, whole grains, tubers, and processed carbohydrates), primary protein intake (defined as consumed four or more days per week, including dairy products, eggs and poultry, red meat, seafood, and soy products) and taste preferences (defined as frequently consumed, including sweet, smoked, salty, oily, spicy, bitter, and sour foods).  All food choices are coded into 16 binary variables: RefinedGrains, WholeGrains, Tubers, ProcessedCarbs, Dairy, Egg-Poultry, RedMeat, Seafood, Soy, SweetFoods, SmokedFoods, SaltyFoods, OilyFoods, SpicyFoods, BitterFoods, and SourFoods. You should response to only 12 variables: SaltyFoods, WholeGrains, SmokedFoods, Tubers, OilyFoods, ProcessedCarbs, Spicy-Food, RefinedGrains, Soy, Dairy, Seafood, and BitterFoods.
 
 ## Software versions
 * R 4.4.2
