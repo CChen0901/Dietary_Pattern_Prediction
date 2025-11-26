@@ -1,4 +1,4 @@
-# Dietary Pattern Prediction based on 12 simple food choices
+# Dietary Pattern Prediction based on 12 Simple Food Choices
 
 ## About
 
