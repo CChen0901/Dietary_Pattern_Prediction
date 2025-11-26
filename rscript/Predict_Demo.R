@@ -4,7 +4,7 @@ library(readr)
 library(randomForest)
 
 # Import model for prediction
-model <- readRDS("../model/Prediction_Model.rds")
+model <- readRDS("../model/Prediction_Model")
 
 # Use the sample information we provide
 # @details
@@ -13,9 +13,10 @@ model <- readRDS("../model/Prediction_Model.rds")
 # primary carbohydrate intake (defined as consumed at least twice daily, including refined grains, whole grains, tubers, and processed carbohydrates),
 # primary protein intake (defined as consumed four or more days per week, including dairy products, eggs and poultry, red meat, seafood, and soy products)
 # and taste preferences (defined as frequently consumed, including sweet, smoked, salty, oily, spicy, bitter, and sour foods). 
-# Responses were coded into 16 binary variables: RefinedGrains, WholeGrains, Tubers, ProcessedCarbs, Dairy, Egg-Poultry, RedMeat, Seafood, Soy, 
+# Responses are coded into 16 binary variables: RefinedGrains, WholeGrains, Tubers, ProcessedCarbs, Dairy, Egg-Poultry, RedMeat, Seafood, Soy, 
 # SweetFoods, SmokedFoods, SaltyFoods, OilyFoods, SpicyFoods, BitterFoods, and SourFoods.
-# For prediction, only 12 food groups is necessary. These features are SaltyFoods, WholeGrains, SmokedFoods, Tubers, OilyFoods, Pro-cessedCarbs, SpicyFood, RefinedGrains, Soy, Dairy, Seafood, and BitterFoods 
+# For prediction, only 12 food groups are necessary. These features are SaltyFoods, WholeGrains, SmokedFoods, Tubers, OilyFoods, Pro-cessedCarbs, SpicyFood, RefinedGrains, Soy, Dairy, Seafood, and BitterFoods 
+# Load mock data
 sample_data <- read_csv("../data/mock.csv")
 
 # Predict
